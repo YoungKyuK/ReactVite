@@ -1,5 +1,10 @@
 import { useState } from "react";
 
+// 컴포넌트의 리렌더링
+// 1. state의 값이 변경되었을 때
+// 2. props의 값이 변경되었을 때
+// 3. 부모 컴포넌트가 리렌더링 되면 자식 컴포넌트가 리렌더링이 된다.
+
 const Bulb = () => {
   const [light, setLight] = useState("OFF");
   console.log(light);
