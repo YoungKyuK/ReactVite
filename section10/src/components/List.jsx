@@ -19,7 +19,6 @@ const List = ({ todos, onUpdate, onDelete }) => {
   };
 
   const filteredTodos = getFilteredData();
-  console.log(getFilteredData);
 
   const { totalCount, doneCount, notDoneCount } = useMemo(() => {
     console.log("getAnalyzedData 호출 :");
