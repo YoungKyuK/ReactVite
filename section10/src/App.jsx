@@ -47,6 +47,7 @@ function App() {
   const idRef = useRef(3);
 
   const onCreate = useCallback((content) => {
+    console.log(onCreate);
     dispatch({
       type: "CREATE",
       data: {
