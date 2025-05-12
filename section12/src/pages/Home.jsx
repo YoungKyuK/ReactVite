@@ -15,6 +15,8 @@ const getMonthlyData = (pivotDate, data) => {
     0
   ).getTime();
 
+  // 0일이라고 설정하면 이전달의 마지막 날이라고 설정이 됌
+
   const endTime = new Date(
     pivotDate.getFullYear(),
     pivotDate.getMonth() + 1,
@@ -30,7 +32,6 @@ const getMonthlyData = (pivotDate, data) => {
 };
 const Home = () => {
   const data = useContext(DiaryStateContext);
-
   const [pivotDate, setPivotDate] = useState(new Date());
 
   const monthlyData = getMonthlyData(pivotDate, data);
@@ -48,7 +49,6 @@ const Home = () => {
         leftChild={<Button onClick={onDecreaseMonth} text={"<"} />}
         rightChild={<Button onClick={onIncreaseMonth} text={">"} />}
       />
-
       <DiaryList data={monthlyData} />
     </div>
   );

@@ -9,7 +9,7 @@ const DiaryItem = ({ id, emotionId, createdDate, content }) => {
   return (
     <div onClick={() => nav(`/diary/${id}`)} className="DiaryItem">
       <div className={`img_section img_section_${emotionId}`}>
-        <img src={getEmotionImage(2)} />
+        <img src={getEmotionImage(emotionId)} />
       </div>
       <div
         onClick={(e) => {
