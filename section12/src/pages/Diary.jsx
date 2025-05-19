@@ -4,7 +4,7 @@ import Button from "../components/Button";
 import Viewer from "../components/Viewer";
 import useDiary from "../hooks/useDiary";
 import { getStringedDate } from "../util/get-stringed-date";
-
+import usePageTitle from "../hooks/usePageTitle";
 // 동적 경로
 // URL Parameter : /뒤에 아이템의 id를 명시 (ex:변경되지 않는 값)
 // Query String : ? 뒤에 변수명과 값 명시 (ex:검색어)
@@ -13,6 +13,7 @@ import { getStringedDate } from "../util/get-stringed-date";
 const Diary = () => {
   const params = useParams();
   const nav = useNavigate();
+  usePageTitle(`${params.id}번 일기`);
 
   const curDiaryItem = useDiary(params.id);
 
